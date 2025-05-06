@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Building2, PillIcon, ActivityIcon, BarChart3Icon, LogIn, UserPlus, LogOut } from 'lucide-react';
+import { Menu, X, Building2, PillIcon, ActivityIcon, BarChart3Icon, UserPlus, LogOut } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../lib/auth-context';
 
@@ -75,9 +75,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login" className="text-pure-white hover:text-healthcare-blue transition-colors flex items-center">
-                <LogIn className="w-4 h-4 mr-1" /> Login
-              </Link>
+             
               <Link to="/register" className="text-pure-white hover:text-healthcare-blue transition-colors flex items-center">
                 <UserPlus className="w-4 h-4 mr-1" /> Register
               </Link>
@@ -138,9 +136,7 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/login" className="text-pure-white text-2xl flex items-center" onClick={() => setIsMenuOpen(false)}>
-              <LogIn className="w-5 h-5 mr-2" /> Login
-            </Link>
+           
             <Link to="/register" className="text-pure-white text-2xl flex items-center" onClick={() => setIsMenuOpen(false)}>
               <UserPlus className="w-5 h-5 mr-2" /> Register
             </Link>

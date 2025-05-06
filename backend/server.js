@@ -101,7 +101,7 @@ app.use(hpp());
 
 // Enable CORS - especially important for Vercel deployment
 app.use(cors({
-  origin: '*', // Allow all origins for development
+  origin: 'http://localhost:5173', // Allow all origins for development
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']

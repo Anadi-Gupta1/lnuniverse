@@ -227,10 +227,10 @@ export default function Dashboard() {
         {/* Welcome Section */}
         <div className="bg-pure-black rounded-lg shadow-md border border-gray-800 p-6 mb-8">
           <h1 className="text-2xl font-bold text-pure-white">
-            Welcome back, {user?.name}!
+            {user ? `Welcome back, ${user.name}!` : 'Welcome to your health dashboard!'}
           </h1>
           <p className="mt-1 text-gray-400">
-            Here's what's happening with your health today.
+            {user ? "Here's what's happening with your health today." : "Explore your health insights and resources below."}
           </p>
         </div>
 

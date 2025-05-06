@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './lib/auth-context';
-import { ProtectedRoute } from './components/ProtectedRoute';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -30,10 +29,10 @@ const App: React.FC = () => {
               <Navbar />
               <main className="flex-grow">
                 <Routes>
-                  {/* Redirect the root path to register page */}
-                  <Route path="/" element={<Navigate to="/register" replace />} />
+                  {/* Make root path show the homepage */}
+                  <Route path="/" element={<Index />} />
                   
-                  {/* Landing page moved to /home */}
+                  {/* Landing page also available at /home */}
                   <Route path="/home" element={<Index />} />
                   
                   {/* Public routes with standard container */}
@@ -53,14 +52,10 @@ const App: React.FC = () => {
                   {/* Health Goals route - public */}
                   <Route path="/health-goals" element={<HealthGoals />} />
                   
-                  {/* Protected routes */}
+                  {/* Dashboard route - public */}
                   <Route 
                     path="/dashboard" 
-                    element={
-                      <ProtectedRoute>
-                        <Dashboard />
-                      </ProtectedRoute>
-                    } 
+                    element={<Dashboard />} 
                   />
                   
                   {/* TeleHealth route - use HealthGoals component for now */}
