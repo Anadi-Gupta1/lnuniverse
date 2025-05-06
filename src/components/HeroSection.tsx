@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import GlowingButton from './ui/GlowingButton';
 import SplineEmbed from './SplineEmbed';
@@ -41,7 +40,7 @@ const HeroSection = () => {
           <h2 className={`text-xl md:text-2xl text-pure-white/90 mb-8 opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`} 
             style={{ animationDelay: '0.5s' }}
           >
-            SRIJAN 2024 Project | Guided by Dr. Bhawana Pillai, Ph.D. (Computer Science)
+            PROJECT SHOWCASE - LNUniverse 2025
           </h2>
         </div>
 

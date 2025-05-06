@@ -1,19 +1,13 @@
-
 import React from 'react';
 import GlowingButton from './ui/GlowingButton';
-import SplineEmbed from './SplineEmbed';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-pure-black pt-20 pb-10 relative">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto mb-16">
-          <SplineEmbed 
-            url="https://my.spline.design/pillanddnaanimation-vW6BovZQ8iitazPX1pVBr1Dg/" 
-            height="400px"
-            title="Pill and DNA Animation 3D Model"
-          />
+        <div className="max-w-4xl mx-auto mb-16 flex justify-center">
+          <div className="w-24 h-1 bg-healthcare-blue rounded-full"></div>
         </div>
 
         <div className="flex justify-center mb-10">
@@ -63,18 +57,13 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Project Status</h3>
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-healthcare-green/20 text-healthcare-green text-sm">
               <span className="w-2 h-2 rounded-full bg-healthcare-green mr-2"></span>
-              SRIJAN 2024 Submission
+              PROJECT SHOWCASE - LNUniverse 2025
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-pure-white/60 text-sm mb-4 md:mb-0">
-            © 2024 LNCTS | Submitted by Hrick Kumar Jha | 12-04-25
-          </p>
-          <div className="text-pure-white/60 text-sm">
-            <span>SEO Title: LNCTS Healthcare Management System - AI for Better Patient Care</span>
-          </div>
+          {/* Footer content without copyright and SEO title */}
         </div>
       </div>
     </footer>
