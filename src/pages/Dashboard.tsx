@@ -70,6 +70,53 @@ export default function Dashboard() {
     notifications: 0,
   });
 
+  // Add useEffect to scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    // TODO: Fetch actual stats from API
+    setStats({
+      appointments: 2,
+      prescriptions: 1,
+      healthGoals: 3,
+      notifications: 1,
+    });
+  }, []);
+
+  const handleEmergencyClick = () => {
+    // Navigate to emergency page instead of using the link
+    navigate('/emergency');
+  };
+
+  const quickLinks = [
+    {
+      title: 'Hospitals',
+      icon: <Building2 className="w-6 h-6" />,
+      link: '/hospitals', // Corrected from '/hospital-list' to match App.tsx route
+      color: 'bg-purple-500',
+    },
+    {
+      title: 'Pharmacy',
+      icon: <PillIcon className="w-6 h-6" />,
+      link: '/medical-pharmacy', // This already matches MedicalPharmacy.tsx
+      color: 'bg-red-500',
+    },
+    {
+      title: 'Health Goals',
+      icon: <ActivityIcon className="w-6 h-6" />,
+      link: '/health-goals', // This already matches HealthGoals.tsx
+      color: 'bg-yellow-500',
+    },
+    {
+      title: 'Emergency',
+      icon: <AlertTriangle className="w-6 h-6" />,
+      onClick: handleEmergencyClick, // This uses a click handler which is fine
+      color: 'bg-orange-500',
+    },
+  ];
+
   // Fitness app review data for visualization
   const fitnessReviewData = [
     { name: "Excellent", value: 42 },
@@ -144,48 +191,6 @@ export default function Dashboard() {
   const mobileGradientId = "colorMobile-" + Math.random().toString(36).substr(2, 9);
   const desktopGradientId = "colorDesktop-" + Math.random().toString(36).substr(2, 9);
   const mobileGradientId2 = "colorMobile2-" + Math.random().toString(36).substr(2, 9);
-
-  useEffect(() => {
-    // TODO: Fetch actual stats from API
-    setStats({
-      appointments: 2,
-      prescriptions: 1,
-      healthGoals: 3,
-      notifications: 1,
-    });
-  }, []);
-
-  const handleEmergencyClick = () => {
-    // Navigate to emergency page instead of using the link
-    navigate('/emergency');
-  };
-
-  const quickLinks = [
-    {
-      title: 'Hospitals',
-      icon: <Building2 className="w-6 h-6" />,
-      link: '/hospitals', // Corrected from '/hospital-list' to match App.tsx route
-      color: 'bg-purple-500',
-    },
-    {
-      title: 'Pharmacy',
-      icon: <PillIcon className="w-6 h-6" />,
-      link: '/medical-pharmacy', // This already matches MedicalPharmacy.tsx
-      color: 'bg-red-500',
-    },
-    {
-      title: 'Health Goals',
-      icon: <ActivityIcon className="w-6 h-6" />,
-      link: '/health-goals', // This already matches HealthGoals.tsx
-      color: 'bg-yellow-500',
-    },
-    {
-      title: 'Emergency',
-      icon: <AlertTriangle className="w-6 h-6" />,
-      onClick: handleEmergencyClick, // This uses a click handler which is fine
-      color: 'bg-orange-500',
-    },
-  ];
 
   // Chart configurations
   const exerciseChartConfig = {

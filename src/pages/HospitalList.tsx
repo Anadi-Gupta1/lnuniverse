@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
@@ -112,6 +112,10 @@ const hospitals: Hospital[] = [
 const HospitalList: React.FC = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleHospitalClick = (hospitalId: number) => {
     navigate(`/hospital/${hospitalId}`);
   };
@@ -119,7 +123,7 @@ const HospitalList: React.FC = () => {
   return (
     <div className="min-h-screen bg-pure-black text-pure-white py-8 pt-24 px-4">
       <h1 className="text-3xl font-bold mb-8 text-center glow-text-blue animate-fade-in-up">Hospitals in Bhopal</h1>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[80vh] overflow-y-auto p-4">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {hospitals.map((hospital) => (
           <Card key={hospital.id} className="cursor-pointer hover:shadow-lg transition-all duration-300 bg-gray-900 border-gray-800 animate-fade-in-up" style={{animationDelay: `${hospital.id * 100}ms`}}>
             <CardHeader>

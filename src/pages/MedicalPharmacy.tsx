@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -177,6 +177,10 @@ const serviceCategories = [
 ];
 
 const MedicalPharmacy: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-pure-black text-pure-white py-8 pt-24 px-4">
       <h1 className="text-3xl font-bold mb-8 text-center glow-text-green animate-fade-in-up">Medical & Pharmacy Services in Bhopal</h1>
