@@ -1,8 +1,8 @@
 // Import the Express app
-import app from '../backend/server.js';
+const app = require('../backend/server');
 
 // Export a serverless function handler that works with Vercel
-export default function handler(req, res) {
+module.exports = (req, res) => {
   // This line is important - it forwards the request to your Express app
   return app(req, res);
-}
+};
